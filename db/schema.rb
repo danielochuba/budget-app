@@ -10,26 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_09_205655) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_11_032618) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.binary "icon"
+    t.string "icon"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
-  create_table "categorydeal", force: :cascade do |t|
+  create_table "categories_deals", id: false, force: :cascade do |t|
     t.bigint "deal_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_categorydeal_on_category_id"
-    t.index ["deal_id"], name: "index_categorydeal_on_deal_id"
+    t.index ["category_id"], name: "index_categories_deals_on_category_id"
+    t.index ["deal_id"], name: "index_categories_deals_on_deal_id"
   end
 
   create_table "deals", force: :cascade do |t|
@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_09_205655) do
   end
 
   add_foreign_key "categories", "users"
-  add_foreign_key "categorydeal", "categories"
-  add_foreign_key "categorydeal", "deals"
+  add_foreign_key "categories_deals", "categories"
+  add_foreign_key "categories_deals", "deals"
   add_foreign_key "deals", "users", column: "author_id"
 end
