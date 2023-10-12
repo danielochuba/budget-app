@@ -7,8 +7,6 @@ class DealsController < ApplicationController
     # select deals for a specific category
     @category = Category.includes(:deals).find(params[:category_id])
     @deals = @category.deals
-
-
     @total_amount_spent = @deals.sum(:amount)
   end
 
