@@ -6,7 +6,7 @@ class DealsController < ApplicationController
   def index
     # select deals for a specific category
     @category = Category.includes(:deals).find(params[:category_id])
-    @deals = @category.deals
+    @deals = @category.deals.order('created_at DESC')
     @total_amount_spent = @deals.sum(:amount)
   end
 
