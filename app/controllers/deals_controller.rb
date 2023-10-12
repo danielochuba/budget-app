@@ -5,8 +5,11 @@ class DealsController < ApplicationController
   # GET /deals or /deals.json
   def index
     # select deals for a specific category
-    @category = Category.find(params[:category_id])
+    @category = Category.includes(:deals).find(params[:category_id])
     @deals = @category.deals
+
+
+    @total_amount_spent = @deals.sum(:amount)
   end
 
   # GET /deals/1 or /deals/1.json
@@ -14,7 +17,7 @@ class DealsController < ApplicationController
 
   # GET /deals/new
   def new
-    @category = Category.find(params[:category_id])
+    @category = Category.includes(:deals).find(params[:category_id])
     @deal = @category.deals.new
   end
 
@@ -59,11 +62,16 @@ class DealsController < ApplicationController
 
   # DELETE /deals/1 or /deals/1.json
   def destroy
-    @deal.destroy
+    @deal = Deal.find(params[:id])
+    if @deal.destroy
 
-    respond_to do |format|
-      format.html { redirect_to category_deals_url, notice: 'Deal was successfully destroyed.' }
-      format.json { head :no_content }
+      @deal.category_deals.destroy_all
+      respond_to do |format|
+        format.html { redirect_to category_deals_url, notice: 'Deal was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to category_deals_url, notice: 'Deal was not destroyed.'
     end
   end
 

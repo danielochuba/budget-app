@@ -3,6 +3,7 @@
 <%= button_to "<", categories_path, method: :get %>
 
 <h1>Deals</h1>
+<p> Total amount spent: <%= @total_amount_spent %> </p>
 
 <div id="deals">
   <% @deals.each do |deal| %>

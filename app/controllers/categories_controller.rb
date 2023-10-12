@@ -4,17 +4,12 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
+    @deals = Deal.includes(:category).all
     @categories = Category.all
   end
 
   # GET /categories/1 or /categories/1.json
   def show; end
-
-  # GET /categories/1/deals
-  def deals
-    @category = Category.find(params[:id])
-    @deals = @category.deals
-  end
 
   # GET /categories/new
   def new
@@ -55,7 +50,11 @@ class CategoriesController < ApplicationController
 
   # DELETE /categories/1 or /categories/1.json
   def destroy
+    @category = Category.find(params[:id])
+    category_deals = @category.category_deals
+
     @category.destroy
+    category_deals.destroy_all
 
     respond_to do |format|
       format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
