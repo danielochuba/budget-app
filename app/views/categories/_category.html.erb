@@ -12,7 +12,7 @@
 
   <p>
     <strong>Total amount Spent:</strong>
-    <%= category.user_id %>
+    <%= category.deals.sum(:amount) %>
   </p>
 
 </div>
