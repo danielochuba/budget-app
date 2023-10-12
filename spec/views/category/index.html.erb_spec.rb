@@ -5,8 +5,8 @@ RSpec.describe 'Please Customize the email and password with yours: categories/i
     let(:user) { User.create(id: 1, name: 'Daniel Ochuba', email: 'danielochuba78@gmail.com', password: 'Welcome126@') }
 
     let(:category) do
-      Category.create(id: 1, name: 'Sample Category', icon: 'Sample Icon'	,
-                    user_id: user.id)
+      Category.create(id: 1, name: 'Sample Category', icon: 'Sample Icon',
+                      user_id: user.id)
     end
     before do
       visit root_path

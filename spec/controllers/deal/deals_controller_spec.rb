@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe DealsController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
-  let(:category) { FactoryBot.create(:category, user: user) }
+  let(:category) { FactoryBot.create(:category, user:) }
 
   before do
     allow(controller).to receive(:authenticate_user!).and_return(true)
@@ -26,17 +26,17 @@ RSpec.describe DealsController, type: :controller do
   describe 'POST #create' do
     it 'creates a new deal' do
       deal_params = { name: 'New Deal', amount: 10, author_id: user.id, category_ids: [category.id] }
-      expect {
+      expect do
         post :create, params: { category_id: category.id, deal: deal_params }
-      }.to change(Deal, :count).by(1)
+      end.to change(Deal, :count).by(1)
       expect(response).to redirect_to(category_deals_path(category))
     end
 
     it 'does not create a deal with invalid parameters' do
       deal_params = { name: '', amount: 10, author_id: user.id, category_ids: [category.id] }
-      expect {
+      expect do
         post :create, params: { category_id: category.id, deal: deal_params }
-      }.to change(Deal, :count).by(0)
+      end.to change(Deal, :count).by(0)
       expect(response).to have_http_status(422)
     end
   end
