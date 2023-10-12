@@ -1,4 +1,4 @@
-<%= form_with(model: deal) do |form| %>
+<%= form_with(model: @deal, url: category_deals_path) do |form| %>
   <% if deal.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
@@ -21,10 +21,17 @@
     <%= form.number_field :amount %>
   </div>
 
-  <div>
-    <%= form.label :author_id, style: "display: block" %>
-    <%= form.text_field :author_id %>
-  </div>
+<div>
+  <%= form.label :category_id, "Select Categories" %>
+  <%
+=begin%>
+ <%= form.select :category_id, options_for_select(Category.all.map { |category| [category.name, category.id] }), {}, name: 'deal[category_id]', class: 'form-control' %> 
+<%
+=end%>
+<%= form.select :category_id, options_for_select(Category.all.map { |category| [category.name, category.id] }), { }, { name: 'deal[category_ids][]', multiple: true, class: 'form-control' } %>
+
+</div>
+
 
   <div>
     <%= form.submit %>

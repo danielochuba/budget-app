@@ -1,14 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
+<%= button_to "<", categories_path, method: :get %>
+
 <h1>Deals</h1>
 
 <div id="deals">
   <% @deals.each do |deal| %>
     <%= render deal %>
     <p>
-      <%= link_to "Show this deal", deal %>
+      <%= link_to "Show this deal", category_deal_path(id: deal.id) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New deal", new_deal_path %>
+<%= link_to "New deal", new_category_deal_path %>

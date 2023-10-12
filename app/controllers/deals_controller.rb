@@ -4,7 +4,9 @@ class DealsController < ApplicationController
 
   # GET /deals or /deals.json
   def index
-    @deals = Deal.all
+    # select deals for a specific category
+    @category = Category.find(params[:category_id])
+    @deals = @category.deals
   end
 
   # GET /deals/1 or /deals/1.json
@@ -12,7 +14,8 @@ class DealsController < ApplicationController
 
   # GET /deals/new
   def new
-    @deal = Deal.new
+    @category = Category.find(params[:category_id])
+    @deal = @category.deals.new
   end
 
   # GET /deals/1/edit
@@ -22,9 +25,17 @@ class DealsController < ApplicationController
   def create
     @deal = Deal.new(deal_params)
 
+    @deal.author = current_user
+
+    category_ids = params[:deal][:category_ids]
+
+    @deal.categories << Category.where(id: category_ids)
+
+    @categories = Category.all
+
     respond_to do |format|
       if @deal.save
-        format.html { redirect_to deal_url(@deal), notice: 'Deal was successfully created.' }
+        format.html { redirect_to category_deals_path, notice: 'Deal was successfully created.' }
         format.json { render :show, status: :created, location: @deal }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -51,7 +62,7 @@ class DealsController < ApplicationController
     @deal.destroy
 
     respond_to do |format|
-      format.html { redirect_to deals_url, notice: 'Deal was successfully destroyed.' }
+      format.html { redirect_to category_deals_url, notice: 'Deal was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
