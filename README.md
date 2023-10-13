@@ -183,6 +183,8 @@ If you like this project, please give me a like, it doesn't cost you anything an
 
 We would like to thank Bee in Student Success who is always avalaible to solve issues and Microverse for push us to work hard every day!
 
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ❓ FAQ <a name="faq"></a>
