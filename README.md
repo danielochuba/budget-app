@@ -78,8 +78,12 @@
 </details>
 
 ### Key Features <a name="key-features"></a>
+- **[Login page and registration page]**
+- **[Category list]**
+- **[Display a list of Category added by the logged-in user ]**
+- **[Transactions list]**
+- **[Display a list of Transactions created by the logged-in user]**
 
-- **[Setup KANBAN BOARD]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -113,7 +117,7 @@ Clone this repository to your desired folder:
 ```
 ### Install
 
-Go to your /recipe-app folder:
+Go to your /budget-app folder:
 
 ```sh
   cd budget-app
