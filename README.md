@@ -192,8 +192,6 @@ We would like to thank Bee in Student Success who is always avalaible to solve i
    - Check my [@danielochuba](https://github.com/danielochuba)
 
 - **[How can I contact the authors of this project?]**
-
-  - Check my [LinkedIn profile](https://linkedin.com/in/simplebet/) or email me at simplebetsas@gmail.com
   - Email me at danielochuba78@gmail.com
 
   
