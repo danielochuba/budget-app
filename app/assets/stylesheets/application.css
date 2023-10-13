@@ -1,15 +1,52 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+.categories {
+  margin: auto;
+}
+
+.category-card {
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 2px;
+  display: flex;
+  margin: 10px;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.category-icon {
+  border-radius: 2px 0 0 2px;
+  display: flex;
+  justify-content: center;
+  width: 80px;
+}
+
+.deal-card {
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 2px 2px 0 rgba(20, 20, 20, 0.1);
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 5px;
+  margin: 10px;
+  position: relative;
+}
+
+.deal-name {
+  font-size: 1.6em;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.form-div {
+  width: 90%;
+  margin: auto;
+}
+
+.green {
+  color: #5fb523;
+}
+
+.green-background {
+  background-color: #5fb523;
+}
