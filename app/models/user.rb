@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :categories, dependent: :destroy
   validates :name, presence: true
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable
+         :recoverable, :rememberable, :validatable
 end
