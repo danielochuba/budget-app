@@ -23,7 +23,7 @@
 
 <div class="mb-6">
   <%= form.label :category_id, "Select Categories - hold down CTRL or cmd key to select multiple" %>
-  <%= form.select :category_id, options_for_select(Category.all.map { |category| [category.name, category.id] }), { }, { name: 'deal[category_ids][]', multiple: true, class: 'form-multiselect block w-full mt-1' } %>
+  <%= form.select :category_id, options_for_select(@categories.map { |category| [category.name, category.id] }), { }, { name: 'deal[category_ids][]', multiple: true, class: 'form-multiselect block w-full mt-1', required: true } %>
 </div>
 
 
