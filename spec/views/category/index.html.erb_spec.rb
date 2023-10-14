@@ -13,7 +13,7 @@ RSpec.describe 'Please Customize the email and password with yours: categories/i
     end
 
     it 'renders the index view' do
-      expect(page).to have_content('Budget')
+      expect(page).to have_content('Log In')
     end
   end
 end
