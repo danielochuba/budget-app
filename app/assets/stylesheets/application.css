@@ -19,6 +19,14 @@
   display: flex;
   justify-content: center;
   width: 80px;
+  margin-left: -25px;
+}
+
+.category-info {
+  display: flex;
+  flex-direction: column;
+   row-gap: 17px;
+   margin-left: -60px;
 }
 
 .deal-card {
@@ -32,14 +40,14 @@
 }
 
 .deal-name {
-  font-size: 1.6em;
+  font-size: 1.5em;
   font-weight: 600;
   margin: 0;
   padding: 0;
 }
 
 .form-div {
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 
@@ -47,6 +55,47 @@
   color: #5fb523;
 }
 
+.input-height {
+  height: 50px;
+}
+
+.blue {
+  color: #3778c2;
+}
+
+.text-gray {
+  color: #434654;
+}
+
 .green-background {
   background-color: #5fb523;
+}
+
+.blue-background {
+  background-color: #3778c2;
+}
+
+.mb-3 {
+  margin-bottom: 30px;
+}
+
+.point {
+  cursor: pointer;
+}
+
+.mb-5 {
+  margin-bottom: 55px;
+}
+
+.add-btn {
+  border: 1px solid rgb(235, 227, 227);
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+  left: 0;
+  height: 50px;
+}
+
+.all > a {
+  width: 95%;
 }

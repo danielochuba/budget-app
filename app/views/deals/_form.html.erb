@@ -1,4 +1,21 @@
 <%= form_with(model: @deal, url: category_deals_path) do |form| %>
+    <nav class="blue-background">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center">
+            <%= link_to "<", category_deals_path, method: :get, class: "relative inline-flex items-center justify-center rounded-md p-2 text-white text-xl hover:text-white focus:outline-none hover:ring-2 hover:ring-inset hover:ring-white" %>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start sm:ml-6">
+            <div class="flex flex-shrink items-center sm:ml-6">
+              <span class="text-white">NEW TRANSACTION</span>
+            </div>
+          </div>
+          <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <%= form.submit class: "point focus:outline-none text-white  focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900" %>
+          </div>
+        </div>
+      </div>
+    </nav>
   <% if deal.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
@@ -11,23 +28,16 @@
     </div>
   <% end %>
 
-  <div class="mb-6">
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "Enter Transaction name" %>
+  <div class="mb-1 mt-2">
+    <%= form.text_field :name, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "Enter Transaction name" %>
   </div>
 
-  <div class="mb-6">
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.number_field :amount, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "Enter Amount" %>
+  <div class="mb-1">
+    <%= form.number_field :amount, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "Enter Amount" %>
   </div>
 
-<div class="mb-6">
-  <%= form.label :category_id, "Select Categories - hold down CTRL or cmd key to select multiple" %>
+<div class="mb-1">
   <%= form.select :category_id, options_for_select(@categories.map { |category| [category.name, category.id] }), { }, { name: 'deal[category_ids][]', multiple: true, class: 'form-multiselect block w-full mt-1', required: true } %>
 </div>
 
-
-  <div class="mb-6">
-    <%= form.submit  class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-60 m-auto block" %>
-  </div>
 <% end %>

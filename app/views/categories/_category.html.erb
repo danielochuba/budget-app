@@ -4,10 +4,14 @@
 
   <div class="category-card">
       <%= image_tag category.icon, class: "category-icon"%>
-      <%= category.name %>
-    <p>
-      <strong>Total: </strong>$ 
+      <div class="category-info pt-1">
+        <span><%= category.name %></span>
+        <span class="text-sm text-gray"><%= category.created_at.strftime("%d %B %Y") %></span>
+      </div>
+    <p class="pt-0">
+      <strong>$ 
       <%= category.deals.sum(:amount) %>
+      </strong>
     </p>
   </div>
 

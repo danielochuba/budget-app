@@ -2,12 +2,16 @@
   <%= link_to "Log in", new_session_path(resource_name), class: "text-white green-background hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-40 block m-auto mt-2" %><br />
 <% end %>
 
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+<%
+=begin%>
+ <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <%= link_to "Sign up", new_registration_path(resource_name), class: "text-white green-background hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-40 block m-auto mt-2" %><br />
-<% end %>
+<% end %> 
+<%
+=end%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name), class: "block text-center text-green-800" %><br />
+  <%= link_to "Forgot your password?", new_password_path(resource_name), class: "block text-center text-gray mt-2" %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
