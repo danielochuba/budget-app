@@ -1,34 +1,45 @@
-<h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+ 
+<nav class="blue-background">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center">
+            <%= link_to "<", root_url, class: "text-xl relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" %>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start sm:ml-6">
+            <div class="flex flex-shrink-0 items-center sm:ml-6">
+              <span class="text-white">SIGN UP</span>
+            </div>
+          </div>
+          <div class="point absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <%= f.submit "Sign Up", class: "point text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-40 block m-auto"%>
+          </div>
+        </div>
+      </div>
+    </nav>
+     <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field mb-3">
-  <%= f.label :name %><br />
-    <%= f.text_field :name,class: "form-control", placeholder: "Full Name"  %>
+  <div class="field mb-1 mt-2">
+    <%= f.text_field :name,class: "form-control", placeholder: "Full Name", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field ">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="field ">
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+
+    <% end %>
+    <%= f.password_field :password, placeholder: "Password", autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, placeholder: "Passwrd confirmation", autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-6" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
+

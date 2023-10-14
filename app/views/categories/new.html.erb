@@ -1,10 +1,18 @@
-<%= button_to "<", categories_path, method: :get %>
-<h1>New category</h1>
-
+    <nav class="blue-background">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center">
+            <%= button_to "<", categories_path, method: :get, class: "text-xl relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" %>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start sm:ml-6 ">
+            <div class="flex flex-shrink-0 items-center sm:ml-6">
+              <span class="text-white">ADD NEW CATEGORY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+<div class="form-div">
 <%= render "form", category: @category %>
-
-<br>
-
-<div>
-  <%= link_to "Back to categories", categories_path %>
 </div>
+<br>

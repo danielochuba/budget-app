@@ -17,6 +17,8 @@ class DealsController < ApplicationController
   def new
     @category = Category.includes(:deals).find(params[:category_id])
     @deal = @category.deals.new
+
+    @categories = Category.where(user_id: current_user.id)
   end
 
   # GET /deals/1/edit

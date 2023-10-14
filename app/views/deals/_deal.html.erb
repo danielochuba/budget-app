@@ -1,17 +1,7 @@
-<div id="<%= dom_id deal %>">
-  <p>
-    <strong>Name:</strong>
-    <%= deal.name %>
-  </p>
+<div id="<%= dom_id deal %>" class="category-card deal-card flex flex-row">
+      <h1 class="text-gray-700 deal-name"><%= deal.name %></h1>
 
-  <p>
-    <strong>Amount:</strong>
-    <%= deal.amount %>
-  </p>
-
-  <p>
-    <strong>Author:</strong>
-    <%= deal.author_id %>
-  </p>
-
+        <span><strong>$ <%= deal.amount %></strong> </span>
+      
 </div>
+

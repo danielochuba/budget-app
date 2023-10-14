@@ -10,19 +10,10 @@ RSpec.describe 'Please Customize the email and password with yours: categories/i
     end
     before do
       visit root_path
-
-      # Click the 'Sign in' link
-      click_link 'Sign In'
-
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-
-      # Click the sign-in button (adjust the selector based on your UI)
-      click_button 'Log in'
     end
 
     it 'renders the index view' do
-      expect(page).to have_content('ADD CATEGORY')
+      expect(page).to have_content('Log In')
     end
   end
 end

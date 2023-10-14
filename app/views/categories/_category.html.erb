@@ -1,18 +1,19 @@
+
+<a href="<%= category_deals_path(category) %>">
 <div id="<%= dom_id category %>">
 
-  <p>
-    <strong>Name:</strong>
-     <%= link_to category.name, category_deals_path(category) %> |
-  </p>
-
-  <p>
-    <strong>Icon:</strong>
-    <%= category.icon %>
-  </p>
-
-  <p>
-    <strong>Total amount Spent:</strong>
-    <%= category.deals.sum(:amount) %>
-  </p>
+  <div class="category-card">
+      <%= image_tag category.icon, class: "category-icon"%>
+      <div class="category-info pt-1">
+        <span><%= category.name %></span>
+        <span class="text-sm text-gray"><%= category.created_at.strftime("%d %B %Y") %></span>
+      </div>
+    <p class="pt-0">
+      <strong>$ 
+      <%= category.deals.sum(:amount) %>
+      </strong>
+    </p>
+  </div>
 
 </div>
+</a>

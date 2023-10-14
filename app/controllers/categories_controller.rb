@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     @deals = Deal.includes(:category).all
-    @categories = Category.all
+    @categories = Category.where(user_id: current_user.id)
   end
 
   # GET /categories/1 or /categories/1.json

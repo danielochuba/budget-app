@@ -1,17 +1,34 @@
-<p style="color: green"><%= notice %></p>
+<% if user_signed_in? %>
+    <nav class="blue-background">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center">
+            <%= button_to "<", categories_path, method: :get, class: "relative inline-flex items-center justify-center rounded-md p-2 text-xl text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" %>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start sm:ml-6">
+            <div class="flex flex-shrink-0 items-center sm:ml-6">
+              <span class="text-white">TRANSACTIONS</span>
+            </div>
+          </div>
 
-<%= button_to "<", categories_path, method: :get %>
-
-<h1>Deals</h1>
-<p> Total amount spent: <%= @total_amount_spent %> </p>
-
+        </div>
+      </div>
+    </nav>
+  <%end%>
+  <div class="deal-card flex flex-row items-center justify-between">
+    <span class="text text-gray">Amount spent: </span>
+    <h1 class="text-xl font-bold text-gray-700 dark:text-white mb-2">$<%= @total_amount_spent %> </h1>
+  </div>
+ 
 <div id="deals">
+<% if @deals.empty? %>
+  <h6 class="text-center font-bold text-gray-700 dark:text-white m-auto" > Transaction list is empty </h6>
+<%else%>
   <% @deals.each do |deal| %>
     <%= render deal %>
-    <p>
-      <%= link_to "Show this deal", category_deal_path(id: deal.id) %>
-    </p>
+
   <% end %>
+<%end%>
 </div>
 
-<%= link_to "New deal", new_category_deal_path %>
+<%= link_to "NEW TRANSACTION", new_category_deal_path, class: "add-btn text-white green-background focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full" %>
