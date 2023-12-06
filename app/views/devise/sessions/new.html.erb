@@ -1,0 +1,33 @@
+
+<div class="form-div">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+ <nav class="blue-background">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center">
+            <%= link_to "<", root_url, class: "text-xl relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" %>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start sm:ml-6">
+            <div class="flex flex-shrink-0 items-center sm:ml-6">
+              <span class="text-white">LOGIN</span>
+            </div>
+          </div>
+          <div class="point absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <%= f.submit "Log in", class: "rounded text-white"%>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  <div class="field mb-1 mt-2">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-white-50 border border-gray-300 text-gray text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-80 input-height", placeholder: "Email" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.password_field :password, autocomplete: "current-password", class: "bg-white-50 border border-gray-300 text-gray text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 input-height", placeholder: "Password" %>
+  </div>
+
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

@@ -1,0 +1,10 @@
+<h1>Editing deal</h1>
+
+<%= render "form", deal: @deal %>
+
+<br>
+
+<div>
+  <%= link_to "Show this deal", category_deal_path(id: @deal.id) %> |
+  <%= link_to "Back to deals", category_deal_path(id: @deal.id) %>
+</div>
