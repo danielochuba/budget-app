@@ -4,7 +4,6 @@
 
 .rounded {
   border: 1px solid #f2f2f2;
-  box-shadow: rgba(20, 20, 20, 0.1);
   border-radius: 10px;
   height: 30px;
   width: 4.5rem;
@@ -119,6 +118,7 @@
     opacity: 0;
     transform: translateY(1rem);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -133,6 +133,7 @@
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
@@ -149,6 +150,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
