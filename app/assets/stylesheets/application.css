@@ -3,10 +3,13 @@
 }
 
 .rounded {
-  border: 2px solid #f2f2f2;
-  border-radius: 15%;
-  height: 40px;
+  border: 1px solid #f2f2f2;
+  box-shadow: rgba(20, 20, 20, 0.1);
+  border-radius: 10px;
+  height: 30px;
   width: 4.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
 }
 
 .category-card {
@@ -33,7 +36,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 17px;
-  margin-left: -60px;
+  margin-left: -40px;
 }
 
 .deal-card {
@@ -109,4 +112,44 @@
 
 .all > a {
   width: 95%;
+}
+
+@keyframes appearFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.appear-from-bottom {
+  animation: appearFromBottom 0.5s ease-out;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing-effect span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(40, end) forwards, appear 0.5s 2s forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
