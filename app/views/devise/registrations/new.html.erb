@@ -21,22 +21,22 @@
      <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field mb-1 mt-2">
-    <%= f.text_field :name,class: "form-control", placeholder: "Full Name", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  %>
+    <%= f.text_field :name,class: "form-control", placeholder: "Full Name", class: "bg-gray-50 border border-gray-300 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  %>
   </div>
 
   <div class="field ">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "bg-gray-50 border border-gray-300 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
   </div>
 
   <div class="field ">
     <% if @minimum_password_length %>
 
     <% end %>
-    <%= f.password_field :password, placeholder: "Password", autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+    <%= f.password_field :password, placeholder: "Password", autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password_confirmation, placeholder: "Passwrd confirmation", autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-6" %>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm password", autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-6" %>
   </div>
 
 <% end %>
