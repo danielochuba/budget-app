@@ -1,12 +1,19 @@
 <a name="readme-top"></a>
 
+
 <div align="center">
 
-<h1><b>BUDGET APP</b></h1>
+<h1><b>DUO BUDGET</b></h1>
  
-  <img src="./page1.png" alt="logo" width="200"  height="auto">
-  <img src="./page2.png" alt="logo" width="200"  height="auto">
+
+https://github.com/danielochuba/budget-app/assets/81446846/3beca353-fb3c-4112-b886-192271265bfe
+
+https://github.com/danielochuba/budget-app/assets/81446846/a55c578b-221a-4b76-96ac-29f50177fddf
+
+https://github.com/danielochuba/budget-app/assets/81446846/958f4fc8-3869-4e21-9f98-a907f2b30d8a
+
   <img src="./erd_diagram.png" alt="logo" width="200"  height="auto">
+  <img src="https://github.com/danielochuba/budget-app/assets/81446846/8f44ab6b-2c6b-4efc-a928-4a4adbe1ff64" alt="logo" width="500"  height="auto">
   <br/>
 
 </div>
