@@ -96,9 +96,7 @@ https://github.com/danielochuba/budget-app/assets/81446846/958f4fc8-3869-4e21-9f
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [lIVE DEMO](https://duotech.onrender.com)
-
-- [VIDEO DESCRIPTION](https://www.loom.com/share/91adef3e24cb46ba8dedef79b0726cdd?sid=96d068bf-25c9-49b1-963b-704737d305e9)
+- [lIVE DEMO](https://rails-0za3.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
