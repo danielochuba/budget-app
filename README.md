@@ -18,7 +18,6 @@ https://github.com/danielochuba/budget-app/assets/81446846/958f4fc8-3869-4e21-9f
 
 </div>
 
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
